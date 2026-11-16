@@ -16,7 +16,7 @@ function TravelVisual({ project }) {
 function InvitationVisual({ project }) {
   return (
     <div className="project-visual invitation-visual">
-      <div className="invitation-frame"><p className="mini-script">The wedding of</p><h3>Tara<br /><span>&amp;</span> Riza</h3><p className="invitation-date">20 — 08 — 2024</p><div className="invitation-line" /></div>
+      <img src={project.image} alt="Screenshot undangan digital Tara dan Riza" />
       <span className="visual-label">{project.label}</span>
     </div>
   )
@@ -33,6 +33,11 @@ function ProjectCard({ project }) {
         <div><p className="project-type">{project.type}</p><h3>{project.title[0]}<br />{project.title[1]}</h3></div>
         <p className="project-description">{project.description}</p>
         <a className="circle-link" href={`mailto:${profile.email}?subject=${subject}`} aria-label={`Tanya tentang proyek ${project.title.join(' ')}`}>↗</a>
+      </div>
+      <div className="project-details">
+        <p><span>Peran</span>{project.contribution}</p>
+        <p><span>Output</span>{project.deliverables}</p>
+        <p><span>Tools</span>{project.tools.join(' · ')}</p>
       </div>
     </article>
   )

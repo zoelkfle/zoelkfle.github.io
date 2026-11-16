@@ -1,4 +1,4 @@
-import { projects } from '../data/portfolio'
+import { process, projects } from '../data/portfolio'
 import ProjectCard from './ProjectCard'
 
 function WorkSection() {
@@ -11,6 +11,15 @@ function WorkSection() {
       </div>
       <div className="project-grid">
         {projects.map((project) => <ProjectCard key={project.id} project={project} />)}
+      </div>
+      <div className="process-section">
+        <div>
+          <p className="eyebrow">How I work</p>
+          <h3>Dari ide yang masih samar<br />menjadi <em>pengalaman yang terasa.</em></h3>
+        </div>
+        <div className="process-list">
+          {process.map((step) => <div className="process-item" key={step.number}><span>{step.number}</span><div><h4>{step.title}</h4><p>{step.description}</p></div></div>)}
+        </div>
       </div>
     </section>
   )
